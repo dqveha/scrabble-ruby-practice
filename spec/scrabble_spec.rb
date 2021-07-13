@@ -4,10 +4,14 @@ require('pry')
 
 describe('scrabble') do
   it("returns a scrabble score for a letter") do
-    expect(scrabble("a")).to(eq(1))
+    expect("A".scrabble()).to(eq(1))
   end
 
   it("returns a scrabble score for a letter") do
-    expect(scrabble("ae")).to(eq(2))
+    expect("AE".scrabble()).to(eq(2))
   end
+
+  # it("returns a scrabble score for a letter") do
+  #   expect(scrabble("lindqvist")).to(eq(22))
+  # end
 end

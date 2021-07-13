@@ -1,37 +1,14 @@
+class String
+  def scrabble
+    keys = %w(A E I O U L N R S T D G B C M P F H V W Y K X J Z Q)
+    values = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 8, 8, 10, 10]
+    scrabble = Hash[*[keys, values].transpose.flatten]
 
-
-def scrabble(word)
-scrabble = Hash.new()
-scrabble.store("a", 1)
-scrabble.store("e", 1)
-scrabble.store("i", 1)
-scrabble.store("o", 1)
-scrabble.store("u", 1)
-scrabble.store("l", 1)
-scrabble.store("n", 1)
-scrabble.store("r", 1)
-scrabble.store("s", 1)
-scrabble.store("t", 1)
-scrabble.store("d", 2)
-scrabble.store("g", 2)
-scrabble.store("b", 3)
-scrabble.store("c", 3)
-scrabble.store("m", 3)
-scrabble.store("p", 3)
-scrabble.store("f", 4)
-scrabble.store("h", 4)
-scrabble.store("v", 4)
-scrabble.store("w", 4)
-scrabble.store("y", 4)
-scrabble.store("k", 5)
-scrabble.store("x", 8)
-scrabble.store("j", 8)
-scrabble.store("z", 10)
-scrabble.store("q", 10)
-array = word.split("")
-counter = 0
-array.each do |array_element|
-  counter = counter + scrabble.fetch(array_element)
+    array = self.split("")
+    counter = 0
+    array.each do |array_element|
+      counter = counter + scrabble.fetch(array_element)
+    end
+  counter
   end
-counter
 end
