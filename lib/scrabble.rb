@@ -1,7 +1,6 @@
 
 
 def scrabble(word)
-  
 scrabble = Hash.new()
 scrabble.store("a", 1)
 scrabble.store("e", 1)
@@ -29,24 +28,10 @@ scrabble.store("x", 8)
 scrabble.store("j", 8)
 scrabble.store("z", 10)
 scrabble.store("q", 10)
-
-  scrabble.fetch(word)
-  # word_array = word.split('') 
+array = word.split("")
+counter = 0
+array.each do |array_element|
+  counter = counter + scrabble.fetch(array_element)
+  end
+counter
 end
-
-# A, E, I, O, U, L, N, R, S, T       1
-# D, G                               2
-# B, C, M, P                         3
-# F, H, V, W, Y                      4
-# K                                  5
-# J, X                               8
-# Q, Z                               10
-
-
-# def title_case(title)
-#   split_sentence = title.split
-#   split_sentence.each do |word|
-#     word.capitalize!()
-#   end
-#   split_sentence.join(" ")
-# end
